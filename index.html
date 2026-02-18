@@ -3,176 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HizmetSepeti - Aradığın Hizmet Kapında</title>
-    <link rel="stylesheet" href="style.css">
+    <title>HizmetSepeti - VIP Hizmet Platformu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ŞATAFATLI TASARIM (CSS) BURADA --- */
+        
+        :root {
+            --primary: #4CAF50; /* Canlı Yeşil */
+            --secondary: #2196F3; /* Canlı Mavi */
+            --accent: #FF9800; /* Turuncu */
+            --dark: #1e272e;
+            --gradient-bg: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);
+        }
 
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-cloud highlight"></i> Hizmet<span class="highlight">Sepeti</span>
-            </a>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-            <nav>
-                <a href="giris.html" class="nav-link">Hizmet Ver</a>
-                <div class="auth-buttons">
-                    <a href="giris.html" class="btn btn-login">Giriş Yap</a>
-                    <a href="uye-ol.html" class="btn btn-signup">Üye Ol</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+        }
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Aradığınız Hizmet, Kolayca Kapınızda.</h1>
-            <p>Temizlikten nakliyata, tamirattan özel derse binlerce profesyonel burada.</p>
-            
-            <div class="search-box">
-                <input type="text" placeholder="Hangi hizmete ihtiyacın var? (Örn: Ev Temizliği)">
-                <button>Fiyat Al</button>
-            </div>
-            
-            <div class="popular-searches">
-                <span>Popüler:</span>
-                <a href="#">Ev Temizliği</a>
-                <a href="#">Nakliyat</a>
-                <a href="#">Boya Badana</a>
-            </div>
-        </div>
-    </section>
+        /* Üst Menü */
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    <section class="popular-categories">
-        <div class="container">
-            <h2 class="section-title">Popüler Hizmet Kategorileri</h2>
-            <div class="category-grid">
-                
-                <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-broom"></i>
-                        <h3>Temizlik</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">Ev Temizliği</a></li>
-                        <li><a href="#">Ofis Temizliği</a></li>
-                        <li><a href="#">İnşaat Sonrası Temizlik</a></li>
-                        <li><a href="#">Koltuk Yıkama</a></li>
-                    </ul>
-                </div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-                <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-paint-roller"></i>
-                        <h3>Tadilat & Dekorasyon</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">Boya Badana</a></li>
-                        <li><a href="#">Mutfak Tadilatı</a></li>
-                        <li><a href="#">Banyo Tadilatı</a></li>
-                        <li><a href="#">Parke Döşeme</a></li>
-                    </ul>
-                </div>
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: -webkit-linear-gradient(#4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i { font-size: 32px; color: #2196F3; }
 
-                <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-truck"></i>
-                        <h3>Nakliyat</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">Evden Eve Nakliyat</a></li>
-                        <li><a href="#">Şehirler Arası Nakliyat</a></li>
-                        <li><a href="#">Parça Eşya Taşıma</a></li>
-                        <li><a href="#">Uluslararası Nakliyat</a></li>
-                    </ul>
-                </div>
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
 
-                <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-wrench"></i>
-                        <h3>Tamir & Teknik</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">Elektrikçi</a></li>
-                        <li><a href="#">Tesisatçı</a></li>
-                        <li><a href="#">Kombi Servisi</a></li>
-                        <li><a href="#">Beyaz Eşya Tamiri</a></li>
-                    </ul>
-                </div>
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-                 <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h3>Özel Ders</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">İngilizce Özel Ders</a></li>
-                        <li><a href="#">Matematik Özel Ders</a></li>
-                        <li><a href="#">Direksiyon Dersi</a></li>
-                        <li><a href="#">Kişisel Antrenör</a></li>
-                    </ul>
-                </div>
+        .btn-login {
+            background: white;
+            color: #333;
+            border: 2px solid #eee;
+        }
+        
+        .btn-login:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
 
-                <div class="category-group">
-                    <div class="cat-header">
-                        <i class="fa-solid fa-ellipsis"></i>
-                        <h3>Diğer Hizmetler</h3>
-                    </div>
-                    <ul>
-                        <li><a href="#">Fotoğrafçı</a></li>
-                        <li><a href="#">Organizasyon</a></li>
-                        <li><a href="#">Yazılım & Tasarım</a></li>
-                        <li><a href="#">Tüm Hizmetleri Gör</a></li>
-                    </ul>
-                </div>
+        .btn-signup {
+            background: var(--gradient-bg);
+            color: white;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+        }
 
-            </div>
-        </div>
-    </section>
+        .btn-signup:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.6);
+        }
 
-    <section class="trend-services" style="background-color: #f9f9f9;">
-        <div class="container">
-            <h2 class="section-title">Öne Çıkan Hizmet Fırsatları</h2>
-            <div class="trend-grid">
-                <div class="trend-card">
-                    <div class="card-image"><img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=500&q=80"></div>
-                    <div class="card-content">
-                        <h3 class="service-title">Ev Temizliği</h3>
-                        <p class="stats"><i class="fa-solid fa-user-group"></i> 9.637 profesyonel</p>
-                        <p class="rating"><i class="fa-solid fa-star"></i> 4.8 (420.858 yorum)</p>
-                        <button class="btn-offer">Teklif Al</button>
-                    </div>
-                </div>
-                <div class="trend-card">
-                    <div class="card-image"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"></div>
-                    <div class="card-content">
-                        <h3 class="service-title">Evden Eve Nakliyat</h3>
-                        <p class="stats"><i class="fa-solid fa-user-group"></i> 2.912 profesyonel</p>
-                        <p class="rating"><i class="fa-solid fa-star"></i> 4.9 (186.321 yorum)</p>
-                        <button class="btn-offer">Teklif Al</button>
-                    </div>
-                </div>
-                <div class="trend-card">
-                    <div class="card-image"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80"></div>
-                    <div class="card-content">
-                        <h3 class="service-title">Boya Badana</h3>
-                        <p class="stats"><i class="fa-solid fa-user-group"></i> 10.642 profesyonel</p>
-                        <p class="rating"><i class="fa-solid fa-star"></i> 4.7 (115.623 yorum)</p>
-                        <button class="btn-offer">Teklif Al</button>
-                    </div>
-                </div>
-                <div class="trend-card">
-                    <div class="card-image"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80"></div>
-                    <div class="card-content">
-                        <h3 class="service-title">İlkokul Özel Ders</h3>
-                        <p class="stats"><i class="fa-solid fa-user-group"></i> 4.721 profesyonel</p>
-                        <p class="rating"><i class="fa-solid fa-star"></i> 4.9 (4.477 yorum)</p>
-                        <button class="btn-offer">Teklif Al</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+        /* Hero (Banner) Alanı */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 60px;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-top: 30px;
+        }
+
+        .search-box input {
+            border: none;
+            flex: 1;
+            padding: 15px 30px;
+            font-size: 18px;
+            outline: none;
+            border-radius: 60px;
+        }
+
+        .search-box button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 60px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #e68900;
+            transform: scale(1.05);
+        }
+
+        /* Kategoriler (Kutucuklu) */
+        .categories-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center
