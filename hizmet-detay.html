@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmet Detayı - HizmetSepeti</title>
+    <title>Hizmet Detayı - Hizmete Gel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- MEVCUT TEMA AYARLARI --- */
+        /* --- YENİ MOR TEMA (Ana Sayfa ile Aynı) --- */
         :root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #2196F3;
-            --accent: #FF9800;
-            --dark: #1e272e;
+            --primary: #8e44ad; /* Mor */
+            --primary-dark: #71368a;
+            --secondary: #ff007f; /* Pembe */
+            --accent: #f1c40f; /* Sarı */
+            --dark: #2c3e50;
             --bg: #f8f9fa;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -26,7 +26,8 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .header-row { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 24px; font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 8px; }
-        .logo i { color: var(--primary); font-size: 28px; }
+        .logo i { color: var(--secondary); font-size: 28px; }
+        .logo span { color: var(--primary); }
         .btn-back { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #666; transition: 0.3s; }
         .btn-back:hover { color: var(--primary); transform: translateX(-5px); }
 
@@ -40,25 +41,25 @@
         .info-header h1 { font-size: 38px; font-weight: 800; margin-bottom: 10px; color: var(--dark); }
         .rating-box { display: inline-flex; align-items: center; gap: 5px; background: #fff8e1; padding: 6px 15px; border-radius: 30px; color: #f39c12; font-weight: 700; font-size: 14px; margin-bottom: 20px; }
 
-        .content-box { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 30px; }
-        .content-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; display: inline-block; }
+        .content-box { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 30px; border-top: 4px solid var(--primary); }
+        .content-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; display: inline-block; color: var(--primary); }
         .feature-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-size: 15px; color: #555; }
-        .feature-list i { color: var(--primary); font-size: 18px; }
+        .feature-list i { color: var(--secondary); font-size: 18px; }
 
         /* Sağ Taraf (Fiyat Kartı) */
         .sidebar { flex: 1; min-width: 280px; }
-        .sticky-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); position: sticky; top: 100px; border: 1px solid var(--primary); }
+        .sticky-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 15px 40px rgba(142, 68, 173, 0.1); position: sticky; top: 100px; border: 1px solid var(--primary); }
         .price-title { font-size: 14px; color: #777; margin-bottom: 5px; }
         .price-tag { font-size: 36px; font-weight: 800; color: var(--dark); margin-bottom: 20px; }
         .price-tag span { font-size: 16px; font-weight: 500; color: #777; }
         
-        .btn-offer { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; transition: 0.3s; box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); }
-        .btn-offer:hover { background: var(--primary-dark); transform: translateY(-3px); }
+        .btn-offer { display: block; width: 100%; background: linear-gradient(135deg, #8e44ad 0%, #ff007f 100%); color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; transition: 0.3s; box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3); }
+        .btn-offer:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(142, 68, 173, 0.5); }
         
-        .guarantee-badge { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 13px; color: #666; background: #f1f8e9; padding: 10px; border-radius: 8px; }
+        .guarantee-badge { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 13px; color: #666; background: #f3e5f5; padding: 10px; border-radius: 8px; }
         
         /* Footer (Kısa) */
-        footer { background: var(--dark); color: #ccc; padding: 30px 0; text-align: center; font-size: 14px; margin-top: auto; }
+        footer { background: #202020; color: #ccc; padding: 30px 0; text-align: center; font-size: 14px; margin-top: auto; }
 
         /* Mobil */
         @media (max-width: 768px) { .detail-wrapper { flex-direction: column; } .service-img { height: 220px; } }
@@ -68,7 +69,7 @@
 
     <header>
         <div class="container header-row">
-            <a href="index.html" class="logo"><i class="fa-solid fa-cloud"></i> HizmetSepeti</a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-cloud"></i> Hizmet<span>Sepeti</span></a>
             <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
         </div>
     </header>
@@ -101,7 +102,7 @@
                     
                     <div class="guarantee-badge">
                         <i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i>
-                        <span>HizmetSepeti ile %100 Güvendesiniz.</span>
+                        <span>Hizmete Gel ile %100 Güvendesiniz.</span>
                     </div>
                 </div>
             </div>
@@ -110,15 +111,13 @@
     </div>
 
     <footer>
-        &copy; 2026 HizmetSepeti - Tüm Hakları Saklıdır.
+        &copy; 2026 HizmetSepeti - Hizmete Gel!
     </footer>
 
     <script>
-        // URL'den hangi hizmetin istendiğini bul (örn: ?service=nakliyat)
         const params = new URLSearchParams(window.location.search);
         const serviceType = params.get('service');
 
-        // Hizmet Verileri (Veritabanı gibi çalışır)
         const services = {
             'temizlik': {
                 title: "Ev Temizliği",
@@ -150,15 +149,13 @@
             }
         };
 
-        // Sayfayı Doldur
-        const data = services[serviceType] || services['temizlik']; // Eğer bulamazsa Temizliği aç
+        const data = services[serviceType] || services['temizlik']; 
 
         document.getElementById('pageTitle').innerText = data.title;
         document.getElementById('pageDesc').innerText = data.desc;
         document.getElementById('pageImg').src = data.img;
         document.getElementById('pagePrice').innerHTML = data.price + " <span>'den başlayan</span>";
 
-        // Listeyi doldur
         let listHtml = "";
         data.features.forEach(item => {
             listHtml += `<li><i class="fa-solid fa-check-circle"></i> ${item}</li>`;
