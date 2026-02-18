@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HizmetSepeti - Hizmet Piş Ağzıma Düş</title>
+    <title>HizmetSepeti - Aradığın Hizmet Kapında</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,15 +11,12 @@
 
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration:none; color:inherit;">
-                    Hizmet<span class="highlight">Sepeti</span>
-                </a>
-            </div>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-cloud highlight"></i> Hizmet<span class="highlight">Sepeti</span>
+            </a>
 
             <nav>
                 <a href="giris.html" class="nav-link">Hizmet Ver</a>
-                
                 <div class="auth-buttons">
                     <a href="giris.html" class="btn btn-login">Giriş Yap</a>
                     <a href="uye-ol.html" class="btn btn-signup">Üye Ol</a>
@@ -30,8 +27,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Hizmet piş, ağzıma düş.</h1>
-            <p>Temizlikten nakliyata, tamirattan özel derse aradığın hizmet burada.</p>
+            <h1>Aradığınız Hizmet, Kolayca Kapınızda.</h1>
+            <p>Temizlikten nakliyata, tamirattan özel derse binlerce profesyonel burada.</p>
             
             <div class="search-box">
                 <input type="text" placeholder="Hangi hizmete ihtiyacın var? (Örn: Ev Temizliği)">
@@ -47,15 +44,99 @@
         </div>
     </section>
 
-    <section class="trend-services">
+    <section class="popular-categories">
         <div class="container">
-            <h2 class="section-title">Haftanın Trend Hizmetleri</h2>
-            <div class="trend-grid">
+            <h2 class="section-title">Popüler Hizmet Kategorileri</h2>
+            <div class="category-grid">
                 
-                <div class="trend-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=500&q=80" alt="Temizlik">
+                <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-broom"></i>
+                        <h3>Temizlik</h3>
                     </div>
+                    <ul>
+                        <li><a href="#">Ev Temizliği</a></li>
+                        <li><a href="#">Ofis Temizliği</a></li>
+                        <li><a href="#">İnşaat Sonrası Temizlik</a></li>
+                        <li><a href="#">Koltuk Yıkama</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-paint-roller"></i>
+                        <h3>Tadilat & Dekorasyon</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">Boya Badana</a></li>
+                        <li><a href="#">Mutfak Tadilatı</a></li>
+                        <li><a href="#">Banyo Tadilatı</a></li>
+                        <li><a href="#">Parke Döşeme</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-truck"></i>
+                        <h3>Nakliyat</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">Evden Eve Nakliyat</a></li>
+                        <li><a href="#">Şehirler Arası Nakliyat</a></li>
+                        <li><a href="#">Parça Eşya Taşıma</a></li>
+                        <li><a href="#">Uluslararası Nakliyat</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-wrench"></i>
+                        <h3>Tamir & Teknik</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">Elektrikçi</a></li>
+                        <li><a href="#">Tesisatçı</a></li>
+                        <li><a href="#">Kombi Servisi</a></li>
+                        <li><a href="#">Beyaz Eşya Tamiri</a></li>
+                    </ul>
+                </div>
+
+                 <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Özel Ders</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">İngilizce Özel Ders</a></li>
+                        <li><a href="#">Matematik Özel Ders</a></li>
+                        <li><a href="#">Direksiyon Dersi</a></li>
+                        <li><a href="#">Kişisel Antrenör</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-group">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <h3>Diğer Hizmetler</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">Fotoğrafçı</a></li>
+                        <li><a href="#">Organizasyon</a></li>
+                        <li><a href="#">Yazılım & Tasarım</a></li>
+                        <li><a href="#">Tüm Hizmetleri Gör</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="trend-services" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Öne Çıkan Hizmet Fırsatları</h2>
+            <div class="trend-grid">
+                <div class="trend-card">
+                    <div class="card-image"><img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=500&q=80"></div>
                     <div class="card-content">
                         <h3 class="service-title">Ev Temizliği</h3>
                         <p class="stats"><i class="fa-solid fa-user-group"></i> 9.637 profesyonel</p>
@@ -63,11 +144,8 @@
                         <button class="btn-offer">Teklif Al</button>
                     </div>
                 </div>
-
                 <div class="trend-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80" alt="Nakliyat">
-                    </div>
+                    <div class="card-image"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"></div>
                     <div class="card-content">
                         <h3 class="service-title">Evden Eve Nakliyat</h3>
                         <p class="stats"><i class="fa-solid fa-user-group"></i> 2.912 profesyonel</p>
@@ -75,11 +153,8 @@
                         <button class="btn-offer">Teklif Al</button>
                     </div>
                 </div>
-
                 <div class="trend-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80" alt="Boya">
-                    </div>
+                    <div class="card-image"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80"></div>
                     <div class="card-content">
                         <h3 class="service-title">Boya Badana</h3>
                         <p class="stats"><i class="fa-solid fa-user-group"></i> 10.642 profesyonel</p>
@@ -87,41 +162,14 @@
                         <button class="btn-offer">Teklif Al</button>
                     </div>
                 </div>
-
                 <div class="trend-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Ders">
-                    </div>
+                    <div class="card-image"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80"></div>
                     <div class="card-content">
                         <h3 class="service-title">İlkokul Özel Ders</h3>
                         <p class="stats"><i class="fa-solid fa-user-group"></i> 4.721 profesyonel</p>
                         <p class="rating"><i class="fa-solid fa-star"></i> 4.9 (4.477 yorum)</p>
                         <button class="btn-offer">Teklif Al</button>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Nasıl Çalışır?</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Talep Oluştur</h3>
-                    <p>İhtiyacın olan hizmetin detaylarını gir.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Teklif Al</h3>
-                    <p>Hizmet verenlerden fiyat teklifleri gelsin.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Seçim Yap</h3>
-                    <p>Yorumları oku, en uygun teklifi seç.</p>
                 </div>
             </div>
         </div>
