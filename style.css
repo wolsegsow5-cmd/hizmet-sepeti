@@ -187,3 +187,91 @@ nav a {
     font-weight: bold;
     margin: 0 auto 20px;
 }
+/* --- Trend Hizmetler Bölümü --- */
+
+.trend-services {
+    padding: 60px 0;
+    background-color: #fcfcfc;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #222;
+    font-weight: 700;
+}
+
+/* Izgara Yapısı (Yan yana dizme) */
+.trend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Mobilde alt alta, PC'de yan yana */
+    gap: 30px;
+}
+
+/* Kart Tasarımı */
+.trend-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden; /* Resim köşelerden taşmasın */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.trend-card:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafif yukarı kalksın */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Kartın Resmi */
+.card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Resmi kutuya sığdır */
+}
+
+/* Kartın İçeriği */
+.card-content {
+    padding: 20px;
+}
+
+.service-title {
+    font-size: 18px;
+    color: #4CAF50; /* Armut yeşili */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.stats, .rating {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating i {
+    color: #FFC107; /* Yıldız sarısı */
+}
+
+/* Teklif Al Butonu */
+.btn-offer {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-offer:hover {
+    background-color: #388E3C;
+}
