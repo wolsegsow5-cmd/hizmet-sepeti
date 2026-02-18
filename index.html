@@ -1,89 +1,57 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HizmetSepeti - Hizmet Piş Ağzıma Düş</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-    <header>
+<section class="trend-services">
         <div class="container">
-            <div class="logo">Hizmet<span class="highlight">Sepeti</span></div>
-            <nav>
-                <a href="giris.html">Hizmet Ver</a>
-                <a href="giris.html" style="background: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px;">Giriş Yap / Üye Ol</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hizmet piş, ağzıma düş.</h1>
-            <p>Temizlikten nakliyata, tamirattan özel derse aradığın hizmet burada.</p>
+            <h2 class="section-title">Haftanın Trend Hizmetleri</h2>
             
-            <div class="search-box">
-                <input type="text" placeholder="Hangi hizmete ihtiyacın var? (Örn: Ev Temizliği)">
-                <button>Fiyat Al</button>
-            </div>
-            
-            <div class="popular-searches">
-                <span>Popüler:</span>
-                <a href="#">Ev Temizliği</a>
-                <a href="#">Evden Eve Nakliyat</a>
-                <a href="#">Boya Badana</a>
+            <div class="trend-grid">
+                
+                <div class="trend-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=500&q=80" alt="Ev Temizliği">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Ev Temizliği</h3>
+                        <p class="stats"><i class="fa-solid fa-user-group"></i> 9.637 profesyonel</p>
+                        <p class="rating"><i class="fa-solid fa-star"></i> 4.8 (420.858 yorum)</p>
+                        <button class="btn-offer">Teklif Al</button>
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80" alt="Nakliyat">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Evden Eve Nakliyat</h3>
+                        <p class="stats"><i class="fa-solid fa-user-group"></i> 2.912 profesyonel</p>
+                        <p class="rating"><i class="fa-solid fa-star"></i> 4.9 (186.321 yorum)</p>
+                        <button class="btn-offer">Teklif Al</button>
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80" alt="Boya Badana">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Boya Badana</h3>
+                        <p class="stats"><i class="fa-solid fa-user-group"></i> 10.642 profesyonel</p>
+                        <p class="rating"><i class="fa-solid fa-star"></i> 4.7 (115.623 yorum)</p>
+                        <button class="btn-offer">Teklif Al</button>
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Özel Ders">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">İlkokul Özel Ders</h3>
+                        <p class="stats"><i class="fa-solid fa-user-group"></i> 4.721 profesyonel</p>
+                        <p class="rating"><i class="fa-solid fa-star"></i> 4.9 (4.477 yorum)</p>
+                        <button class="btn-offer">Teklif Al</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <section class="categories">
-        <div class="container">
-            <h2>Öne Çıkan Hizmetler</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fa-solid fa-broom"></i>
-                    <h3>Temizlik</h3>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-truck-moving"></i>
-                    <h3>Nakliyat</h3>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-paint-roller"></i>
-                    <h3>Tadilat</h3>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-wrench"></i>
-                    <h3>Tamir</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works">
-        <div class="container">
-            <h2>Nasıl Çalışır?</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Talep Oluştur</h3>
-                    <p>İhtiyacın olan hizmetin detaylarını gir.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Teklif Al</h3>
-                    <p>Hizmet verenlerden fiyat teklifleri gelsin.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Seçim Yap</h3>
-                    <p>Yorumları oku, en uygun teklifi seç.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
