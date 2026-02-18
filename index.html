@@ -61,7 +61,7 @@
         .cat-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--primary); }
         .cat-icon { width: 70px; height: 70px; background: #f0fdf4; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 20px; transition: 0.3s; }
         .cat-card:hover .cat-icon { background: var(--primary); color: white; }
-        .cat-card h3 { font-size: 18px; margin-bottom: 5px; }
+        .cat-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--dark); }
         .cat-card span { font-size: 13px; color: var(--text-grey); }
 
         /* --- FIRSATLAR --- */
@@ -72,13 +72,13 @@
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .card-img { width: 100%; height: 200px; object-fit: cover; }
         .card-body { padding: 25px; }
-        .card-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        .card-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
         .card-meta { display: flex; gap: 15px; font-size: 14px; color: var(--text-grey); margin-bottom: 20px; }
         .card-meta i { color: #FFC107; }
         .btn-full { width: 100%; display: block; text-align: center; background: var(--primary); color: white; padding: 12px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
         .btn-full:hover { background: var(--primary-dark); }
 
-        /* --- YENİ: YORUMLAR (TESTIMONIALS) --- */
+        /* --- YORUMLAR --- */
         .reviews-section { padding: 80px 0; background: white; }
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
@@ -87,17 +87,17 @@
         .review-text { font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6; }
         .user-info { display: flex; align-items: center; gap: 15px; }
         .user-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-        .user-details h4 { font-size: 16px; font-weight: 700; }
+        .user-details h4 { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
         .stars { color: #FFC107; font-size: 12px; }
 
-        /* --- YENİ: USTA BANDI (CTA) --- */
+        /* --- USTA BANDI --- */
         .pro-banner { background: linear-gradient(rgba(30, 39, 46, 0.9), rgba(30, 39, 46, 0.9)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-attachment: fixed; padding: 100px 0; text-align: center; color: white; }
         .pro-banner h2 { font-size: 42px; font-weight: 800; margin-bottom: 20px; }
         .pro-banner p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn-white { background: white; color: var(--dark); padding: 15px 40px; border-radius: 50px; font-weight: 800; font-size: 18px; transition: 0.3s; }
+        .btn-white { background: white; color: var(--dark); padding: 15px 40px; border-radius: 50px; font-weight: 800; font-size: 18px; transition: 0.3s; display: inline-block;}
         .btn-white:hover { transform: scale(1.05); background: var(--primary); color: white; }
 
-        /* --- YENİ: FOOTER --- */
+        /* --- FOOTER --- */
         footer { background: var(--dark); color: #b2bec3; padding: 70px 0 20px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
         .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; font-weight: 600; }
@@ -109,47 +109,19 @@
         .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
         .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
 
-        /* --- WHATSAPP BUTONU --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            animation: pulse 2s infinite;
-        }
+        /* --- WHATSAPP --- */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: 0.3s; animation: pulse 2s infinite; }
         .whatsapp-float:hover { transform: scale(1.1); background-color: #20b858; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Mobil Uyum */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .pro-banner h2 { font-size: 32px; }
-            .header-content { flex-direction: column; gap: 15px; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .pro-banner h2 { font-size: 32px; } .header-content { flex-direction: column; gap: 15px; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fa-solid fa-cloud"></i> Hizmet<span>Sepeti</span>
             </a>
             <div class="auth-buttons">
@@ -174,26 +146,26 @@
         <div class="container">
             <h2 class="section-title">Popüler Kategoriler</h2>
             <div class="cat-grid">
-                <div class="cat-card">
+                <a href="hizmet-detay.html?service=temizlik" class="cat-card">
                     <div class="cat-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3>Temizlik</h3>
                     <span>Ev, Ofis, Koltuk</span>
-                </div>
-                <div class="cat-card">
+                </a>
+                <a href="hizmet-detay.html?service=nakliyat" class="cat-card">
                     <div class="cat-icon"><i class="fa-solid fa-truck-fast"></i></div>
                     <h3>Nakliyat</h3>
                     <span>Evden Eve, Şehirler</span>
-                </div>
-                <div class="cat-card">
+                </a>
+                <a href="hizmet-detay.html?service=boya" class="cat-card">
                     <div class="cat-icon"><i class="fa-solid fa-paint-roller"></i></div>
                     <h3>Tadilat</h3>
                     <span>Boya, Tesisat</span>
-                </div>
-                <div class="cat-card">
+                </a>
+                <a href="hizmet-detay.html?service=ozelders" class="cat-card">
                     <div class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>Özel Ders</h3>
                     <span>Matematik, Dil</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -206,30 +178,24 @@
                     <img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=600" class="card-img">
                     <div class="card-body">
                         <h3 class="card-title">Ev Temizliği</h3>
-                        <div class="card-meta">
-                            <span><i class="fa-solid fa-star"></i> 4.9 (12k Yorum)</span>
-                        </div>
-                        <a href="#" class="btn-full">TEKLİF AL</a>
+                        <div class="card-meta"><span><i class="fa-solid fa-star"></i> 4.9 (12k Yorum)</span></div>
+                        <a href="hizmet-detay.html?service=temizlik" class="btn-full">TEKLİF AL</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" class="card-img">
                     <div class="card-body">
                         <h3 class="card-title">Evden Eve Nakliyat</h3>
-                        <div class="card-meta">
-                            <span><i class="fa-solid fa-star"></i> 4.8 (5k Yorum)</span>
-                        </div>
-                        <a href="#" class="btn-full">TEKLİF AL</a>
+                        <div class="card-meta"><span><i class="fa-solid fa-star"></i> 4.8 (5k Yorum)</span></div>
+                        <a href="hizmet-detay.html?service=nakliyat" class="btn-full">TEKLİF AL</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600" class="card-img">
                     <div class="card-body">
                         <h3 class="card-title">Boya Badana</h3>
-                        <div class="card-meta">
-                            <span><i class="fa-solid fa-star"></i> 4.7 (8k Yorum)</span>
-                        </div>
-                        <a href="#" class="btn-full">TEKLİF AL</a>
+                        <div class="card-meta"><span><i class="fa-solid fa-star"></i> 4.7 (8k Yorum)</span></div>
+                        <a href="hizmet-detay.html?service=boya" class="btn-full">TEKLİF AL</a>
                     </div>
                 </div>
             </div>
@@ -255,13 +221,7 @@
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" class="user-avatar">
                         <div class="user-details">
                             <h4>Ayşe Yılmaz</h4>
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                         </div>
                     </div>
                 </div>
@@ -272,13 +232,7 @@
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" class="user-avatar">
                         <div class="user-details">
                             <h4>Mehmet Demir</h4>
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
                         </div>
                     </div>
                 </div>
@@ -289,13 +243,7 @@
                         <img src="https://randomuser.me/api/portraits/women/68.jpg" class="user-avatar">
                         <div class="user-details">
                             <h4>Selin Kaya</h4>
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                         </div>
                     </div>
                 </div>
