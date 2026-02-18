@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üye Ol - HizmetSepeti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Tam ekran yüksekliği */
+            background: #f0f2f5;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-box h2 { margin-bottom: 20px; color: #333; }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 5px; color: #666; font-size: 14px; }
+        .input-group input {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; outline: none;
+        }
+        .btn-submit {
+            width: 100%; background: #FF9800; /* Üye Ol için Turuncu renk */
+            color: white; border: none; padding: 12px;
+            border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 10px;
+        }
+        .btn-submit:hover { background: #e68900; }
+        .switch-link { margin-top: 15px; font-size: 14px; }
+        .switch-link a { color: #4CAF50; text-decoration: none; font-weight: bold; }
+        .back-home { position: absolute; top: 20px; left: 20px; text-decoration: none; color: #333; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Aramıza Katıl</h2>
+            <p style="margin-bottom: 20px; color: #666; font-size: 14px;">Hizmet almak veya vermek için hesap oluştur.</p>
+            
+            <form>
+                <div class="input-group">
+                    <label>E-Posta Adresi</label>
+                    <input type="email" placeholder="ornek@email.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Telefon Numarası</label>
+                    <input type="tel" placeholder="0555 555 55 55" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Şifre Belirle</label>
+                    <input type="password" placeholder="******" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Ücretsiz Üye Ol</button>
+            </form>
+
+            <div class="switch-link">
+                Zaten hesabın var mı? <a href="giris.html">Giriş Yap</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
