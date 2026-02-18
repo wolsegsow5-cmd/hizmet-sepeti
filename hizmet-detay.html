@@ -3,129 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ev Temizliği - HizmetSepeti</title>
+    <title>Hizmet Detayı - HizmetSepeti</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Ana Tasarımın Aynısı */
-        :root { --primary: #4CAF50; --dark: #1e272e; --text: #636e72; --bg: #f8f9fa; }
+        /* --- MEVCUT TEMA AYARLARI --- */
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary: #2196F3;
+            --accent: #FF9800;
+            --dark: #1e272e;
+            --bg: #f8f9fa;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--bg); color: #333; }
         a { text-decoration: none; color: inherit; }
 
-        /* Header (Basitleştirilmiş) */
-        header { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        /* Header */
+        header { background: white; padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 24px; font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 8px; }
-        .logo i { color: var(--primary); }
-        .btn-back { font-size: 14px; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 5px; }
-        .btn-back:hover { color: var(--primary); }
+        .logo i { color: var(--primary); font-size: 28px; }
+        .btn-back { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #666; transition: 0.3s; }
+        .btn-back:hover { color: var(--primary); transform: translateX(-5px); }
 
-        /* Sayfa İçeriği */
-        .content-wrapper { display: flex; gap: 40px; margin-top: 40px; margin-bottom: 80px; flex-wrap: wrap; }
+        /* Detay İçeriği */
+        .detail-wrapper { display: flex; gap: 40px; margin-top: 40px; margin-bottom: 80px; flex-wrap: wrap; }
         
-        /* Sol Taraf (Bilgi) */
-        .main-info { flex: 2; min-width: 300px; }
-        .service-header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
-        .rating-badge { display: inline-flex; align-items: center; gap: 5px; background: #fff8e1; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; color: #f39c12; margin-bottom: 20px; }
-        .service-img { width: 100%; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; }
+        /* Sol Taraf */
+        .main-content { flex: 2; min-width: 300px; }
+        .service-img { width: 100%; height: 350px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px; }
         
-        .section-box { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 30px; }
-        .section-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #f1f1f1; padding-bottom: 10px; display: inline-block; }
-        .feature-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: var(--text); }
-        .feature-list i { color: var(--primary); }
+        .info-header h1 { font-size: 38px; font-weight: 800; margin-bottom: 10px; color: var(--dark); }
+        .rating-box { display: inline-flex; align-items: center; gap: 5px; background: #fff8e1; padding: 6px 15px; border-radius: 30px; color: #f39c12; font-weight: 700; font-size: 14px; margin-bottom: 20px; }
 
-        /* Sağ Taraf (Fiyat ve Teklif) */
+        .content-box { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 30px; }
+        .content-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; display: inline-block; }
+        .feature-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-size: 15px; color: #555; }
+        .feature-list i { color: var(--primary); font-size: 18px; }
+
+        /* Sağ Taraf (Fiyat Kartı) */
         .sidebar { flex: 1; min-width: 280px; }
-        .sticky-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: sticky; top: 100px; border: 1px solid var(--primary); }
-        .price-label { font-size: 14px; color: var(--text); margin-bottom: 5px; }
-        .price-value { font-size: 32px; font-weight: 800; color: var(--dark); margin-bottom: 20px; }
-        .price-value span { font-size: 16px; font-weight: 500; color: var(--text); }
+        .sticky-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); position: sticky; top: 100px; border: 1px solid var(--primary); }
+        .price-title { font-size: 14px; color: #777; margin-bottom: 5px; }
+        .price-tag { font-size: 36px; font-weight: 800; color: var(--dark); margin-bottom: 20px; }
+        .price-tag span { font-size: 16px; font-weight: 500; color: #777; }
         
-        .btn-offer-big { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 18px; transition: 0.3s; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
-        .btn-offer-big:hover { transform: translateY(-3px); background: #388E3C; }
+        .btn-offer { display: block; width: 100%; background: var(--primary); color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; transition: 0.3s; box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); }
+        .btn-offer:hover { background: var(--primary-dark); transform: translateY(-3px); }
         
-        .guarantee { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 13px; color: var(--text); background: #f9f9f9; padding: 10px; border-radius: 8px; }
-        .guarantee i { color: var(--primary); font-size: 16px; }
+        .guarantee-badge { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 13px; color: #666; background: #f1f8e9; padding: 10px; border-radius: 8px; }
+        
+        /* Footer (Kısa) */
+        footer { background: var(--dark); color: #ccc; padding: 30px 0; text-align: center; font-size: 14px; margin-top: auto; }
 
-        /* SSS Akordeon */
-        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { font-size: 14px; color: var(--text); margin-top: 10px; line-height: 1.6; }
-
-        @media (max-width: 768px) { .content-wrapper { flex-direction: column; } .service-img { height: 200px; } }
+        /* Mobil */
+        @media (max-width: 768px) { .detail-wrapper { flex-direction: column; } .service-img { height: 220px; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
+        <div class="container header-row">
             <a href="index.html" class="logo"><i class="fa-solid fa-cloud"></i> HizmetSepeti</a>
-            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Geri Dön</a>
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
         </div>
     </header>
 
     <div class="container">
-        <div class="content-wrapper">
+        <div class="detail-wrapper">
             
-            <div class="main-info">
-                <div class="service-header">
-                    <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.9 (12.450 Değerlendirme)</div>
-                    <h1>Ev Temizliği</h1>
-                    <p style="color: #666; margin-bottom: 20px;">Eviniz pırıl pırıl olsun, size sadece keyfini sürmek kalsın.</p>
+            <div class="main-content">
+                <div class="info-header">
+                    <div class="rating-box"><i class="fa-solid fa-star"></i> 4.9 (Memnuniyet Garantili)</div>
+                    <h1 id="pageTitle">Hizmet Yükleniyor...</h1>
+                    <p id="pageDesc" style="color: #666; margin-bottom: 20px;">En iyi profesyonellerden teklif al, karşılaştır, seç.</p>
                 </div>
 
-                <img src="https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=1000" class="service-img">
+                <img id="pageImg" src="" class="service-img">
 
-                <div class="section-box">
-                    <h3>Hizmet İçeriği</h3>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-check-circle"></i> Genel toz alma ve zemin temizliği</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Mutfak dolapları ve tezgah temizliği</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Banyo ve tuvalet dezenfeksiyonu</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Camların içten silinmesi</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Çöplerin atılması ve dağınıklığın toplanması</li>
-                    </ul>
-                </div>
-
-                <div class="section-box">
-                    <h3>Sıkça Sorulan Sorular</h3>
-                    <div class="faq-item">
-                        <div class="faq-question">Temizlik malzemeleri dahil mi? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer">Standart pakette malzemeleri siz sağlarsınız. Ancak talep formunda "Malzeme İstiyorum" seçeneğini işaretleyerek profesyonelin getirmesini sağlayabilirsiniz.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Gelen personele güvenebilir miyim? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer">Tüm hizmet verenlerimiz kimlik kontrolünden geçer ve önceki müşteri yorumlarına göre puanlanır. Güvenle hizmet alabilirsiniz.</div>
-                    </div>
+                <div class="content-box">
+                    <h3>Hizmet Kapsamı</h3>
+                    <ul class="feature-list" id="featureList">
+                        </ul>
                 </div>
             </div>
 
             <div class="sidebar">
                 <div class="sticky-card">
-                    <p class="price-label">Ortalama Fiyat Aralığı</p>
-                    <div class="price-value">1.500 ₺ <span>'den başlayan</span></div>
+                    <p class="price-title">Ortalama Fiyat Aralığı</p>
+                    <div class="price-tag" id="pagePrice">0 ₺ <span>'den başlayan</span></div>
                     
-                    <a href="giris.html" class="btn-offer-big">FİYAT TEKLİFİ AL</a>
+                    <a href="giris.html" class="btn-offer">ÜCRETSİZ TEKLİF AL</a>
                     
-                    <div class="guarantee">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>HizmetSepeti Güvencesiyle memnuniyet garantili.</span>
-                    </div>
-
-                    <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">Şu an aktif:</p>
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <div style="width: 10px; height: 10px; background: #2ecc71; border-radius: 50%;"></div>
-                            <span style="font-weight: 600; font-size: 14px;">245 Temizlikçi Müsait</span>
-                        </div>
+                    <div class="guarantee-badge">
+                        <i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i>
+                        <span>HizmetSepeti ile %100 Güvendesiniz.</span>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 HizmetSepeti - Tüm Hakları Saklıdır.
+    </footer>
+
+    <script>
+        // URL'den hangi hizmetin istendiğini bul (örn: ?service=nakliyat)
+        const params = new URLSearchParams(window.location.search);
+        const serviceType = params.get('service');
+
+        // Hizmet Verileri (Veritabanı gibi çalışır)
+        const services = {
+            'temizlik': {
+                title: "Ev Temizliği",
+                desc: "Eviniz pırıl pırıl olsun, size sadece keyfini sürmek kalsın.",
+                img: "https://images.unsplash.com/photo-1581578731117-104f2a863ecc?w=1000",
+                price: "1.500 ₺",
+                features: ["Genel toz alma ve zemin temizliği", "Mutfak ve banyo dezenfeksiyonu", "Camların içten silinmesi", "Çöplerin atılması"]
+            },
+            'nakliyat': {
+                title: "Evden Eve Nakliyat",
+                desc: "Eşyalarınız sigortalı ve ambalajlı olarak güvenle taşınsın.",
+                img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000",
+                price: "4.000 ₺",
+                features: ["Eşya paketleme ve ambalajlama", "Mobilya söküm ve kurulum", "Asansörlü taşıma imkanı", "Sigortalı taşımacılık"]
+            },
+            'boya': {
+                title: "Boya Badana",
+                desc: "Evinizin havasını değiştirin, profesyonel boya ustaları ile çalışın.",
+                img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1000",
+                price: "8.000 ₺",
+                features: ["Dyo/Filli Boya kaliteli malzeme", "Eşyaların maskelenmesi", "Çatlak ve delik tamiri", "Temiz teslimat"]
+            },
+            'ozelders': {
+                title: "Özel Ders",
+                desc: "Matematikten İngilizceye, çocuğunuz için en iyi öğretmenler.",
+                img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1000",
+                price: "500 ₺",
+                features: ["Birebir özel ilgi", "Kişiye özel ders programı", "Online veya yüz yüze seçenek", "Deneyimli eğitmenler"]
+            }
+        };
+
+        // Sayfayı Doldur
+        const data = services[serviceType] || services['temizlik']; // Eğer bulamazsa Temizliği aç
+
+        document.getElementById('pageTitle').innerText = data.title;
+        document.getElementById('pageDesc').innerText = data.desc;
+        document.getElementById('pageImg').src = data.img;
+        document.getElementById('pagePrice').innerHTML = data.price + " <span>'den başlayan</span>";
+
+        // Listeyi doldur
+        let listHtml = "";
+        data.features.forEach(item => {
+            listHtml += `<li><i class="fa-solid fa-check-circle"></i> ${item}</li>`;
+        });
+        document.getElementById('featureList').innerHTML = listHtml;
+    </script>
 
 </body>
 </html>
